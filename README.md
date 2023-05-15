@@ -8,10 +8,10 @@ echo '
 DJANGO_SETTINGS_MODULE=to_do_proj.settings
 DB_NAME=todolist
 DB_USER=postgres
-DB_PASSWORD=WSs9yTSHghMi6Sp
+DB_PASSWORD='PASSWORDS'
 DB_HOST=db1.chzveui56egk.us-east-1.rds.amazonaws.com
 DB_PORT=5432
-SECRET_KEY=vf^b#k_@6td43!4+uw&g^zpkbntdn+!v1hm$yu$x4m%=d)isc3' > env
+SECRET_KEY='YOUR KEY' > env
 ```
 ###Copy Pem file and change permissions
 
@@ -22,7 +22,7 @@ node1 ansible_host=54.210.196.158 ansible_user=ubuntu
 node2 ansible_host=18.234.62.91 ansible_user=ubuntu
 
 [all:vars]
-ansible_ssh_private_key_file=/home/ubuntu/cp-devops-class.pem
+ansible_ssh_private_key_file=/home/ubuntu/'YOUR PEM'
 repo_url=https://github.com/chandradeoarya/
 repo=todo-list
 home_dir=/home/ubuntu
