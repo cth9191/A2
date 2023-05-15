@@ -1,6 +1,6 @@
 # Assessement #2
 
-##Commands in master node
+Commands in master node
 
 ###Input Database Info Into env File
 ```
@@ -236,6 +236,5 @@ server {
         state: restarted
 ```
 
-
-
+![Diagram](https://github.com/cth9191/A2/assets/129889057/0041f923-cff6-4faf-a9d1-89bd144fc549)
 
