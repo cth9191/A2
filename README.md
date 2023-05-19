@@ -13,9 +13,9 @@ DB_HOST=db1.chzveui56egk.us-east-1.rds.amazonaws.com
 DB_PORT=5432
 SECRET_KEY='YOUR KEY' > env
 ```
-###Copy Pem file and change permissions
+Copy Pem file and change permissions
 
-###Create inventory.ini
+Create inventory.ini
 ```
 [webservers]
 node1 ansible_host=54.210.196.158 ansible_user=ubuntu
@@ -33,12 +33,12 @@ django_project=to_do_proj
 host_key_checking=no
 ```
 
-###Check accessilbility 
+Check accessilbility 
 ```
 ansible all -m ping -i inventory.ini
 ```
 
-###Run updates.yml
+Run updates.yml
 ```
 ---
 - hosts: all
@@ -54,7 +54,7 @@ ansible all -m ping -i inventory.ini
 ansible-playbook -i inventory.ini updates.yml
 ```
 
-###Run packages.yml
+Run packages.yml
 ```
 ---
 - hosts: all
@@ -73,7 +73,7 @@ ansible-playbook -i inventory.ini updates.yml
 ansible-playbook -i inventory.ini packages.yml
 ```
 
-###Install python packages and run code from GH
+Install python packages and run code from GH
 ```
 - hosts: all
   become: yes
@@ -102,7 +102,7 @@ ansible-playbook -i inventory.ini packages.yml
         executable: "{{ repo_dir }}/venv/bin
   ```
   
-###Copy Env
+Copy Env
 ```
 ---
 - name: Set environment variables on hosts
@@ -118,7 +118,7 @@ ansible-playbook -i inventory.ini packages.yml
 ansible-playbook -i inventory.ini copyenv.yml
 ```
 
-###Run Daemon services
+Run Daemon services
 ```
 echo '
 [Unit]
@@ -138,7 +138,7 @@ RestartSec=10
 WantedBy=multi-user.target' > todolist.service
 ```
 
-###Daemon ansible playbook
+Daemon ansible playbook
 ```
 ---
 - hosts: all
@@ -175,7 +175,7 @@ WantedBy=multi-user.target' > todolist.service
 ansible-playbook -i inventory.ini gunicorn.yml
 ```
 
-###Create NginX port forwarding config file
+Create NginX port forwarding config file
 ```
 server {
     listen 80;
@@ -193,7 +193,7 @@ server {
 }
 ```
 
-###NGinX Playbook
+NGinX Playbook
 ```
 ---
 - name: Configure Nginx port forwarding
