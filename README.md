@@ -2,7 +2,7 @@
 
 Commands in master node
 
-###Input Database Info Into env File
+Input Database Info Into env File
 ```
 echo '
 DJANGO_SETTINGS_MODULE=to_do_proj.settings
